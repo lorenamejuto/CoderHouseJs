@@ -265,6 +265,40 @@
       </div>
     </div>
     
+    <form action="" id=formulario-busqueda class="contenedor">
+      <p>
+        Realiza tu busqueda por: 
+        <select id="busquedaproductos">  
+          <option value="comensales">comensales</option>
+          <option value="cantCafe">cantCafe</option>
+          <option value="cantCafeCortado">cantCafeCortado</option>
+          <option value="cantCafeJarrito">cantCafeJarrito</option>
+          <option value="cantCafeJarritoCortado">cantCafeJarritoCortado</option>
+          <option value="cantCafeConLeche">cantCafeConLeche</option>
+          <option value="cantAguaSgas">cantAguaSgas</option>
+          <option value="cantAguaCgas">cantAguaCgas</option>
+          <option value="cantCocaCola">cantCocaCola</option>
+          <option value="cantCocaColaL">cantCocaColaL</option>
+          <option value="cantSprite">cantSprite</option>
+          <option value="cantSpriteL">cantSpriteL</option>
+          <option value="cantFanta">cantFanta</option>
+          <option value="cantTonica">cantTonica</option>
+          <option value="cantMediaLunas">cantMediaLunas</option>
+          <option value="cantTostado">cantTostado</option>
+          <option value="cantChipa">cantChipa</option>
+          <option value="cantTarta">cantTarta</option>
+          <option value="cantBrownie">cantBrownie</option>
+          <option value="cantCeliacos">cantCeliacos</option>
+          <option value="cantPromo1">cantPromo1</option>
+          <option value="cantPromo2">cantPromo2</option>
+          <option value="cantPromo3">cantPromo3</option>
+          <option value="cantPromo4">cantPromo4</option>
+        </select>
+        <input type="submit" value="Buscar">
+      </p>
+      <p id="resultado" style="width: 40%;"></p>
+    </form>
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -307,7 +341,7 @@
 
     .contenedor-ticket {
       width: 400px;
-      min-height: 400px;
+      min-height: 300px;
     }
     
 </style>

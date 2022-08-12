@@ -78,6 +78,9 @@ function validar(evt) {
         cantPromo1, cantPromo2, cantPromo3, cantPromo4);
         datos = comanda;
 
+    contieneComandas.push(datos);
+    localStorage.setItem('contieneComandasLS', JSON.stringify(contieneComandas));
+
     for (const propiedad in comanda) {
        /* if (comanda[propiedad] != 0 && propiedad.includes('total')) {
             total = comanda[propiedad] + total;
@@ -97,13 +100,13 @@ function validar(evt) {
 }
 
 let total=0;
+let contieneComandas = [];
 btnTicket.removeAttribute('disabled');
 btnTicket.onclick = function generaTicket() {
     for (const propiedad in datos) {
         if (datos[propiedad] != 0 && propiedad.includes('total')) {
             total = datos[propiedad] + total;
             document.getElementById('total').innerHTML = 'Total: $' + total ;
-            console.log(total)
         }
         if (datos[propiedad] != 0 && !propiedad.includes('total')) {
             let propiedades = propiedad;
@@ -123,12 +126,32 @@ btnTicket.onclick = function generaTicket() {
 
 document.getElementById("comanda").addEventListener("submit", validar);
 
+/*
 const btnLimpiaTicket = document.getElementById('limpia-ticket');
 const descripcionTicket = document.getElementsByTagName('h3');
 
 btnLimpiaTicket.onclick = function limpiaTicket() {
     descripcionTicket.innerHTML = '';
-}
+}*/
+
+
+
+const buscador = document.getElementById("formulario-busqueda");  
+buscador.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let contieneComandasBase = localStorage.getItem('contieneComandasLS');
+    contieneComandasBase = JSON.parse(contieneComandasBase);
+
+    const productoBuscado = document.getElementById("busquedaproductos").value;
+
+    var result = contieneComandasBase.reduce((acc, obj) => {
+        return acc + Number(obj[productoBuscado])
+    }, 0)
+
+    console.log(result)
+    document.getElementById('resultado').innerHTML = result ;
+})
+
 
 
 
