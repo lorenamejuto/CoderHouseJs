@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Cafe de hoy</title>
+</head>
+<body>
+    <div class="contenedor">
+
+      <div class="contenedor-botones">
+        <button class="mesa" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#procesoMesa">
+          Mesa 1
+        </button>
+        <button class="btn cierra-mesa" id="btn-ticket" onclick="generaTicket()" /disabled>Cierra mesa <br> Genera ticket</button>
+      </div>
+
+      <div class="contenedor-botones">
+        <button class="mesa" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#procesoMesa">
+          Mesa 2
+        </button>
+        <button class="btn cierra-mesa">Cierra mesa <br> Genera ticket</button>
+      </div>
+
+      <div class="contenedor-botones">
+        <button class="mesa" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#procesoMesa">
+          Mesa 3
+        </button>
+        <button class="btn cierra-mesa">Cierra mesa <br> Genera ticket</button>
+      </div>
+
+      <div class="contenedor-botones">
+        <button class="mesa" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#procesoMesa">
+          Mesa 4
+        </button>
+        <button class="btn cierra-mesa">Cierra mesa <br> Genera ticket</button>
+      </div>
+      
+      <div class="contenedor-botones">
+        <button class="mesa" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#procesoMesa">
+          Mesa 5
+        </button>
+        <button class="btn cierra-mesa">Cierra mesa <br> Genera ticket</button>
+      </div>
+
+      <div class="contenedor-botones">
+        <button class="mesa" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#procesoMesa">
+          Mesa 6
+        </button>
+        <button class="btn cierra-mesa">Cierra mesa <br> Genera ticket</button>
+      </div>
+
+      <div class="contenedor-botones">
+        <button class="mesa" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#procesoMesa">
+          Mesa 7
+        </button>
+        <button class="btn cierra-mesa">Cierra mesa <br> Genera ticket</button>
+      </div>
+
+      <div class="contenedor-botones">
+        <button class="mesa" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#procesoMesa">
+          Mesa 8
+        </button>
+        <button class="btn cierra-mesa">Cierra mesa <br> Genera ticket</button>
+      </div>
+
+      <div class="contenedor-botones">
+        <button class="mesa" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#procesoMesa">
+          Mesa 9
+        </button>
+        <button class="btn cierra-mesa">Cierra mesa <br> Genera ticket</button>
+      </div>
+
+      <div class="contenedor-botones">
+        <button class="mesa" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#procesoMesa">
+          Mesa 10
+        </button>
+        <button class="btn cierra-mesa">Cierra mesa <br> Genera ticket</button>
+      </div>
+
+      <div class="contenedor-botones">
+        <button class="mesa" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#procesoMesa">
+          Mesa 11
+        </button>
+        <button class="btn cierra-mesa">Cierra mesa <br> Genera ticket</button>
+      </div>
+
+      <div class="contenedor-botones">
+        <button class="mesa" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#procesoMesa">
+          Mesa 12
+        </button>
+        <button class="btn cierra-mesa">Cierra mesa <br> Genera ticket</button>
+      </div>
+  
+      <!-- Modal -->
+      <div class="modal fade" id="procesoMesa" tabindex="-1" aria-labelledby="procesoMesaLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="procesoMesaLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="" id="comanda">
+                <select name="comensales" id="comensales">
+                  <option>Comensales</option>
+                </select>
+                  <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                          Cafeteria
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          <h4>Café pocillo</h4>
+                          <select name="cantCafe" id="cantCafe">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Cortado pocillo</h4>
+                          <select name="cantCafeCortado" id="cantCafeCortado">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Café jarrito</h4>
+                          <select name="cantCafeJarrito" id="cantCafeJarrito">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Cortado Jarrito</h4>
+                          <select name="cantCafeJarrito" id="cantCafeJarritoCortado">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Café con leche</h4>
+                          <select name="cantCafeJarrito" id="cantCafeConLeche">
+                            <option value="0">Cantidad</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                          Bebidas
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          <h4>Agua s/gas</h4>
+                          <select name="cantAguaSgas" id="cantAguaSgas">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Agua c/gas</h4>
+                          <select name="cantAguaCgas" id="cantAguaCgas">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Coca cola</h4>
+                          <select name="cantCocaCola" id="cantCocaCola">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Coca cola light</h4>
+                          <select name="cantCocaColaL" id="cantCocaColaL">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Sprite</h4>
+                          <select name="cantSprite" id="cantSprite">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Sprite light</h4>
+                          <select name="cantSpriteL" id="cantSpriteL">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Fanta</h4>
+                          <select name="cantFanta" id="cantFanta">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Agua tónica</h4>
+                          <select name="cantTonica" id="cantTonica">
+                            <option value="0">Cantidad</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                          Panaderia y pasteleria
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          <h4>Media lunas</h4>
+                          <select name="cantMediaLunas" id="cantMediaLunas">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Tostado JyQ</h4>
+                          <select name="cantTostado" id="cantTostado">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Chipá</h4>
+                          <select name="cantChipa" id="cantChipa">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Tarta del día</h4>
+                          <select name="cantTarta" id="cantTarta">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Brownie</h4>
+                          <select name="cantBrownie" id="cantBrownie">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Cuadrado celíaco</h4>
+                          <select name="cantCeliacos" id="cantCeliacos">
+                            <option value="0">Cantidad</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                          Promociones
+                        </button>
+                      </h2>
+                      <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                          <h4>Café con leche + Media lunas</h4>
+                          <select name="cantPromo1" id="cantPromo1">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Café con leche + Tostado JyQ</h4>
+                          <select name="cantPromo2" id="cantPromo2">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Café con leche + 2 Chipá</h4>
+                          <select name="cantPromo3" id="cantPromo3">
+                            <option value="0">Cantidad</option>
+                          </select>
+                          <h4>Café con leche + Cuadrado celíaco</h4>
+                          <select name="cantPromo4" id="cantPromo4">
+                            <option value="0">Cantidad</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="" class="btn btn-primary" data-bs-dismiss="modal">Enviar comanda</button>
+                  </div>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contenedor">
+      <div class="contenedor-ticket">
+        <h3 id="ticket"></h3>
+        <h3 id="total"></h3>
+      </div>
+      <div>
+        <button onclick="limpiaTicket()" id="limpia-ticket">Limpia Ticket</button>
+      </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./proyecto.js"></script>    
+    <script src="./procesaComanda.js"></script>
+
+</body>
+
+<style>
+    .contenedor {
+        display: flex;
+        justify-content: space-between;
+        align-items: top;
+        flex-wrap: wrap;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .contenedor-botones {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 30px 15px;
+    }
+    .mesa {
+        width: 100px;
+        height: 100px;
+        background-color: lightcyan;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .mesa-abierta {
+      background-color: red;
+    }
+    .cierra-mesa {
+      background-color: #e9ecef;
+      font-size: 11px;
+    }
+
+    .contenedor-ticket {
+      width: 400px;
+      min-height: 400px;
+    }
+    
+</style>
+</html>
