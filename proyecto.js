@@ -1,11 +1,10 @@
-let variables = comensales, cantCafe, cantCafeCortado, cantCafeJarrito,
+let comensales, cantCafe, cantCafeCortado, cantCafeJarrito,
 cantCafeJarritoCortado, cantCafeConLeche, cantAguaSgas, cantAguaCgas,
 cantCocaCola, cantCocaColaL, cantSprite, cantSpriteL, cantFanta, cantTonica,
 cantMediaLunas, cantTostado, cantChipa, cantTarta, cantBrownie, cantCeliacos,
 cantPromo1, cantPromo2, cantPromo3, cantPromo4;
-let comandas = [];
-let datos = {};
-const btnTicket = document.getElementById('btn-ticket');
+let contenedorTicket = document.getElementById("contenedor-ticket");
+let contieneComandas = [];
 
 function generateSelect(id , productos) {
     select = document.getElementById(id);
@@ -42,8 +41,6 @@ generateSelect('cantPromo2' , 99);
 generateSelect('cantPromo3' , 99);
 generateSelect('cantPromo4' , 99);
 
-
-
 function validar(evt) {
     evt.preventDefault();
     comensales = document.getElementById("comensales").value;
@@ -76,17 +73,19 @@ function validar(evt) {
         cantCocaCola, cantCocaColaL, cantSprite, cantSpriteL, cantFanta, cantTonica,
         cantMediaLunas, cantTostado, cantChipa, cantTarta, cantBrownie, cantCeliacos,
         cantPromo1, cantPromo2, cantPromo3, cantPromo4);
-        datos = comanda;
 
-    contieneComandas.push(datos);
+    contieneComandas.push(comanda);
     localStorage.setItem('contieneComandasLS', JSON.stringify(contieneComandas));
 
+    let total=0;
+
     for (const propiedad in comanda) {
-       /* if (comanda[propiedad] != 0 && propiedad.includes('total')) {
+        if (comanda[propiedad] != 0 && propiedad.includes('total')) {
             total = comanda[propiedad] + total;
             document.getElementById('total').innerHTML = 'Total: $' + total ;
         }
         if (comanda[propiedad] != 0 && !propiedad.includes('total')) {
+            contenedorTicket.style.display = "block";
             let propiedades = propiedad;
             let comandaPropiedad = comanda[propiedad];
         
@@ -94,30 +93,9 @@ function validar(evt) {
             consumos.innerHTML = `${propiedades}: ${comandaPropiedad}`;
             let ticket = document.getElementById("ticket")
             ticket.append(consumos);
-        
-        }*/
+        }
     }
-}
 
-let total=0;
-let contieneComandas = [];
-btnTicket.removeAttribute('disabled');
-btnTicket.onclick = function generaTicket() {
-    for (const propiedad in datos) {
-        if (datos[propiedad] != 0 && propiedad.includes('total')) {
-            total = datos[propiedad] + total;
-            document.getElementById('total').innerHTML = 'Total: $' + total ;
-        }
-        if (datos[propiedad] != 0 && !propiedad.includes('total')) {
-            let propiedades = propiedad;
-            let comandaPropiedad = datos[propiedad];
-        
-            let consumos = document.createElement("h3");
-            consumos.innerHTML = `${propiedades}: ${comandaPropiedad}`;
-            let ticket = document.getElementById("ticket")
-            ticket.append(consumos);
-        }
-    }
     clearForm("comanda");
     function clearForm(id) {
         document.getElementById(id).reset();
@@ -126,15 +104,14 @@ btnTicket.onclick = function generaTicket() {
 
 document.getElementById("comanda").addEventListener("submit", validar);
 
-/*
 const btnLimpiaTicket = document.getElementById('limpia-ticket');
 const descripcionTicket = document.getElementsByTagName('h3');
 
 btnLimpiaTicket.onclick = function limpiaTicket() {
-    descripcionTicket.innerHTML = '';
-}*/
-
-
+    document.getElementById('total').innerHTML = '';
+    document.getElementById("ticket").innerHTML= '';
+    contenedorTicket.style.display = "none";
+}
 
 const buscador = document.getElementById("formulario-busqueda");  
 buscador.addEventListener('submit', (e) => {
@@ -144,7 +121,7 @@ buscador.addEventListener('submit', (e) => {
 
     const productoBuscado = document.getElementById("busquedaproductos").value;
 
-    var result = contieneComandasBase.reduce((acc, obj) => {
+    let result = contieneComandasBase.reduce((acc, obj) => {
         return acc + Number(obj[productoBuscado])
     }, 0)
 
